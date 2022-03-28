@@ -3,6 +3,7 @@ import React from "react";
 const Todo = ({ text, todo, todos, setTodos }) => {
   const deleteHandler = () => {
     setTodos(todos.filter((task) => task.id !== todo.id));
+    localStorage.setItem("tasks", JSON.stringify(todos));
   };
 
   const completeHandler = () => {
